@@ -1,0 +1,10 @@
+
+## sacar demo.html de fontello
+
+##menu admin titulo correrlo respecto a a sidebar
+
+## ver si se encipta la contraseña
+
+## sidebar en create y edit
+
+## buscador

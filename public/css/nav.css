@@ -1,0 +1,45 @@
+.navbar{
+    background: #0085c3;
+    box-shadow: 0 1px 2px #0085c3;
+}
+
+.navbar-default .navbar-right>li>a{
+    color: white;
+}
+
+.navbar-default .navbar-brand{
+    color: white !important;
+}
+
+ .navbar-right{        
+    font-size: 1.4em !important;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #4ecd66 !important;
+}
+
+.verde{
+   color: #4ecd66; 
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white; 
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #4ecd66; 
+}
+
+.logo{
+    height: 32px;
+    width: auto;
+}
+
+.logo:hover{
+    opacity: 0.7;
+}

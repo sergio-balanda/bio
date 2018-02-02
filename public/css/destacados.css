@@ -1,0 +1,16 @@
+.thumbnail:hover{
+    border: solid 1px #0085c3;
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  height: 100%;
+}
+
+.thumbnail-link:hover{
+    text-decoration: none;
+}

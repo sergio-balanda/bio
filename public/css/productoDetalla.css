@@ -1,0 +1,39 @@
+.producto-detalle{
+    margin: 65px;
+}
+
+.carousel-indicators{
+    position: relative;
+    z-index: auto;
+    display: flex;
+    flex-direction: column;
+    bottom: auto;
+}
+.carousel-indicators li{
+    text-indent:0;
+    height: 40px;
+    padding: 0px;
+    margin: 0;
+    width: auto;
+}
+.carousel-indicators .active{
+    width: auto;
+    height: auto;
+}
+
+.carousel .item img{
+    max-height: 350px;
+    min-height: 350px;    
+}
+
+.carousel-indicators .active img{
+    border: solid 1px #0085c3;
+}
+
+.contacto{
+    font-size: 1.2em;
+}
+
+.tabla-detalle h5{
+    color: black;
+}

@@ -1,0 +1,24 @@
+.fondoAzul{
+    background-color: #0085c3;
+}
+
+.fondoAzul a{
+    color: white;
+    text-decoration: none;
+}
+
+.fondoAzul a:hover{
+    color: #4ecd66;
+}
+
+.fondoAzul h6{
+    color: white;
+}
+
+.fondoAzul p{
+    color: white;
+}
+
+.desarrollo i{
+    text-align: right;
+}

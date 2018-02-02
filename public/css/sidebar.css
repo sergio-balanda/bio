@@ -1,0 +1,31 @@
+.admin{
+    margin-top: 64px;
+}
+
+.admin-sidebar ul{
+   background-color: #0085c3;
+   margin-top: 0px;
+    height: 100vh;
+}
+
+.admin-sidebar ul li a{
+    color: white;
+}
+
+.admin-sidebar ul li a:hover{
+    color: #4ecd66;
+}
+
+.admin .nav-sidebar{
+    margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+   .admin-sidebar .nav-sidebar{
+    margin: 0px -15px;
+}
+  .admin .sidebar-offcanvas {
+    margin-left: 0px;
+  }
+
+}

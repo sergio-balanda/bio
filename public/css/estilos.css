@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url("nav.css");
+@import url("destacados.css");
+@import url("footer.css");
+@import url("notebooks.css");
+@import url("cart.css");
+@import url("productoDetalla.css");
+@import url("fontello.css");
+    
+*{
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.no-padding{
+    margin-top: 65px;
+}
+
+.nav-espacio{
+    margin-top: 65px;
+}
+
+.banner{
+    width: 100%;
+}
+
+.fondoVerde{
+    width: 100%;
+    background-color: #4ecd66;
+}
+
+.fondoVerde h4,h5{
+    color: white;
+}
+
+.fondoVerde a:hover{
+    text-decoration: none;
+}
+
+.fondoVerde h4:hover{
+    color: #0085c3;
+}
+
+.icon-location{
+    line-height: 50px;
+    height: 50px;
+}
+
+.fondoAmarillo{
+    background-color: #ffdb15;
+}
+
+.fondoAmarillo p{
+    color: #0085c3; 
+}
+
+.fondoAmarillo img{
+    margin: auto;
+}
+
+.fondoAmarillo a img:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari */
+    transform: scale(1.1);
+}
+
+.hidde{
+    display: none;
+}
+
+.hidde img:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari */
+    transform: scale(1.1);
+}
+
+.clear{
+    margin-top: 16%;
+}
+
+@media screen and (min-width: 768px) {
+    .clear{
+        margin-top: 4%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hidde {
+        display: block;
+    }
+    .clear{
+        margin-top: 6%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .fondoVerde {
+        padding: 15px 0 15px 0;
+    }
+}
+
+
+
