@@ -7,16 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-#PROYECTO
+# PROYECTO
 
 
-## sacar demo.html de fontello
+* sacar demo.html de fontello
 
-## menu admin titulo correrlo respecto a a sidebar
+* menu admin titulo correrlo respecto a a sidebar
 
-## ver si se encipta la contraseña
+* ver si se encipta la contraseña
 
-## sidebar en create y edit
+* sidebar en create y edit
 
 ## About Laravel
 
