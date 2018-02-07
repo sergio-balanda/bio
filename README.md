@@ -1,4 +1,4 @@
-<p align="center"><img src="https://avatars3.githubusercontent.com/u/18149076?s=400&v=4"></p>
+<p align="center"><img src="https://photos.google.com/photo/AF1QipM_yxI93m0bf_AhJF_c0nuRkAa3hWmsLDBrc-YM?hl=es"></p>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
@@ -8,6 +8,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+
+# Proyecto
+
+* sacar demo.html de fontello
+
+* formumario create ventanas chicas revisar
+
+* menu con marcas pulgadas ect.
+
+* contador de productos sidebar
 
 ## About Laravel
 
