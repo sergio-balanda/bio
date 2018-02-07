@@ -1,0 +1,16 @@
+#select select{width: 100%;}
+
+.clear{margin-top: 16%;}
+
+
+@media screen and (min-width: 768px) {
+    .clear{
+        margin-top: 4%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .clear{
+        margin-top: 3%;
+    }
+}

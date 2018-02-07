@@ -8,6 +8,10 @@ use Biosistemas\Http\Requests\UserCreateRequest;
 use Biosistemas\Http\Requests\UserUpdateRequest;
 */
 use Biosistemas\Producto;
+use Biosistemas\Marca;
+use Biosistemas\Notebook;
+use Biosistemas\Processor;
+use Biosistemas\Pulgadas_notebook;
 use Redirect;
 use Session;
 use DB;
@@ -43,7 +47,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        return "fjalm";
+        $marcas = Marca::pluck('nombre','id');
+        return view('productos.create',compact('marcas'));
     }
 
     /**
@@ -54,7 +59,31 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $id=1;
+        $tipo = $request->get('tipo');
+        switch($tipo){
+            case ($tipo=="proyector"):
+                return "proyector";    
+                //return Redirect::to('/proyector');
+                break;
+            case ($tipo=="monitor"):
+                return "monitor";
+                //return Redirect::to('/monitor');
+                break;
+            case ($tipo=="notebook"):
+                $producto = Producto::create($request->all());
+                $producto_id = $producto->id;
+                $processors = Processor::pluck('nombre','id');
+                $pulgadas_notebooks = Pulgadas_notebook::pluck('nombre','id');
+                Session::flash('message','Producto registrado correctamente');
+                return view('notebooks.create',compact('producto_id','processors','pulgadas_notebooks'));
+                //return Redirect::to('/notebook');
+                break;
+            default:
+                return Redirect::to('/productos');
+                break;
+        }
+     
     }
 
     /**

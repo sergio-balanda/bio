@@ -5,6 +5,7 @@
 @import url("notebooks.css");
 @import url("cart.css");
 @import url("productoDetalla.css");
+@import url("dash.css");
 @import url("fontello.css");
     
 *{
@@ -76,22 +77,9 @@
     transform: scale(1.1);
 }
 
-.clear{
-    margin-top: 16%;
-}
-
-@media screen and (min-width: 768px) {
-    .clear{
-        margin-top: 4%;
-    }
-}
-
 @media screen and (min-width: 1024px) {
     .hidde {
         display: block;
-    }
-    .clear{
-        margin-top: 6%;
     }
 }
 
@@ -100,6 +88,5 @@
         padding: 15px 0 15px 0;
     }
 }
-
 
 

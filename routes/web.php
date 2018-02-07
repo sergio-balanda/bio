@@ -44,6 +44,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 //USUARIO
 Route::resource('usuario', 'UsuarioController');
 //Producto
-Route::resource('producto', 'ProductoController');
+Route::resource('productos', 'ProductoController');
 //Notebook
 Route::resource('notebook', 'NotebookController');
+//Monitor
+Route::resource('monitor', 'MonitorController');
+//Proyector
+Route::resource('proyector', 'ProyectorController');

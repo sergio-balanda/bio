@@ -8,12 +8,13 @@ use Biosistemas\Http\Requests\UserCreateRequest;
 use Biosistemas\Http\Requests\UserUpdateRequest;
 */
 use Biosistemas\Producto;
-use Biosistemas\Notebook;
+use Biosistemas\Monitor;
+use Biosistemas\Monitor_pulgada;
 use Redirect;
 use Session;
 use DB;
 
-class NotebookController extends Controller
+class MonitorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,22 +23,22 @@ class NotebookController extends Controller
      */
     public function index(Request $request)
     {
-         if($request!=""){
+        if($request!=""){
             $query=trim($request->get('searchText'));
-            $notebooks = DB::table('notebooks')
-                ->join('productos','notebooks.producto_id','productos.id')
+            $monitors = DB::table('monitors')
+                ->join('productos','monitors.producto_id','productos.id')
                 ->where('productos.titulo','like','%'.$query.'%')
-                ->select('notebooks.*','productos.titulo as producto_titulo')
+                ->select('monitors.*','productos.titulo as producto_titulo')
                 ->paginate(6);
         }
         elseif ($request==""){
-            $notebooks = DB::table('notebooks')
-                ->join('productos','notebooks.producto_id','productos.id')
+            $notebooks = DB::table('monitors')
+                ->join('productos','monitors.producto_id','productos.id')
                 ->where('productos.titulo','like','%'.$query.'%')
-                ->select('*','productos.titulo as producto_titulo')
+                ->select('monitors.*','productos.titulo as producto_titulo')
                 ->paginate(6);
         }    
-        return view('notebooks.index',["notebooks"=>$notebooks,"searchText"=>$query]);
+        return view('monitores.index',["monitors"=>$monitors,"searchText"=>$query]);
     }
 
     /**
@@ -45,9 +46,10 @@ class NotebookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        return view('notebooks.create');
+        $pulgadas = Monitor_pulgada::pluck('nombre','id');
+        return view('monitores.create',compact('pulgadas'));
     }
 
     /**
@@ -58,9 +60,7 @@ class NotebookController extends Controller
      */
     public function store(Request $request)
     {
-        $notebook = Notebook::create($request->all());        
-        Session::flash('message','Notebook registrada correctamente');
-        return Redirect::to('/notebook');
+        //
     }
 
     /**
@@ -82,8 +82,8 @@ class NotebookController extends Controller
      */
     public function edit($id)
     {
-        $notebook = Notebook::find($id);
-        return view('notebooks.edit',['notebook'=>$notebook]);
+        $monitor = Monitor::find($id);
+        return view('monitores.edit',['monitor'=>$monitor]);
     }
 
     /**

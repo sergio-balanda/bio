@@ -1,3 +1,5 @@
+<p align="center"><img src="https://avatars3.githubusercontent.com/u/18149076?s=400&v=4"></p>
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
@@ -6,17 +8,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
-
-# PROYECTO
-
-
-* sacar demo.html de fontello
-
-* menu admin titulo correrlo respecto a a sidebar
-
-* ver si se encipta la contraseña
-
-* sidebar en create y edit
 
 ## About Laravel
 
@@ -60,3 +51,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+ 
+### sacar demo.html de fontello
+
+### menu admin titulo correrlo respecto a a sidebar
+
+### ver si se encipta la contraseña
+
+### sidebar en create y edit

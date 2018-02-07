@@ -19,7 +19,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-fixed-top" style="box-shadow:none">
-            <div class="container">
+            <div class="">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
@@ -32,17 +32,19 @@
 
                     <!-- Branding Image -->
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ url('/home') }}">
                         <span class="verde">BIO</span>SISTEMAS</a>
                     </a>
                 </div>
+                
+                <div class="container">
 
+                
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -71,6 +73,9 @@
                         @endif
                     </ul>
                 </div>
+                
+            </div>  
+                
             </div>
         </nav>
         

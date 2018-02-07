@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-   <br>
-    
+    <br>
+    <div class="clear"></div>
         <div class="col-md-8 col-md-offset-2 main">
            
             @include('alerts.request')     
@@ -38,8 +38,8 @@
                         </div>
                         <div class="form-group">
                             <div class="form-control text-center col-md-12">
-                               {!! Form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
-                               <a href="{{ route('usuario.index') }}" class="btn btn-danger">Cancelar</a>                           
+                                <a href="{{ route('usuario.index') }}" class="btn btn-danger">Cancelar</a>
+                                {!! Form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
                            </div>
                         </div>
                     {!!Form::close()!!}

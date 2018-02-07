@@ -1,10 +1,9 @@
 
 ## sacar demo.html de fontello
 
-##menu admin titulo correrlo respecto a a sidebar
+## formumario create ventanas chicas revisar
 
-## ver si se encipta la contraseña
+## menu con marcas pulgadas ect.
 
-## sidebar en create y edit
+## contador de productos sidebar
 
-## buscador
