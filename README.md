@@ -1,4 +1,4 @@
-<p align="center"><img src="https://photos.google.com/photo/AF1QipM_yxI93m0bf_AhJF_c0nuRkAa3hWmsLDBrc-YM?hl=es"></p>
+<p align="center"><img src="https://photos.app.goo.gl/C8xT3zq6KBrR0vLi2"></p>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
