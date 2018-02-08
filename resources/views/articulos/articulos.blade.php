@@ -1,13 +1,13 @@
 <h4 class="red-text text-lighten-2">Registrar producto
-  <a href="{!!URL::to('/productos/create')!!}"><button type="button" class="btn btn-primary red lighten-2">Nuevo</button></a>
+  <a href="{!!URL::to('home/articulo/create')!!}"><button type="button" class="btn btn-primary red lighten-2">Nuevo</button></a>
 </h4>
   
    <div class="row">
         <div class="col-md-10 col-xs-10">
-            @include('productos.search')
+            @include('articulos.search')
         </div>
         <div class="col-md-2 col-xs-2">
-            <a href="{!!URL::to('/producto')!!}"  title="refresh">
+            <a href="{!!URL::to('/articulo')!!}"  title="refresh">
             <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
             </a>
         </div>  
@@ -30,10 +30,10 @@
                 <td>{{$producto->tipo}}</td>
                 <td>
                     <div class="btn-group" style="display: inline-flex;">
-                    <a href="{{route('productos.edit', $parameters = $producto->id )}}" class="btn btn-primary">
+                    <a href="{{route('articulo.edit', $parameters = $producto->id )}}" class="btn btn-primary">
                         <span class="icon-edit" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="editar"></span>
                     </a>
-                    {!! Form::open(['route' => ['productos.destroy', $producto->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['articulo.destroy', $producto->id], 'method' => 'delete']) !!}
                     <button type="submit" class="btn btn-danger" >
                         <span class="icon-trash" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="eliminar"></span>
                     </button>

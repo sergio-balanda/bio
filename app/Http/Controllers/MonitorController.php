@@ -9,7 +9,6 @@ use Biosistemas\Http\Requests\UserUpdateRequest;
 */
 use Biosistemas\Producto;
 use Biosistemas\Monitor;
-use Biosistemas\Monitor_pulgada;
 use Redirect;
 use Session;
 use DB;
@@ -48,8 +47,7 @@ class MonitorController extends Controller
      */
     public function create()
     {
-        $pulgadas = Monitor_pulgada::pluck('nombre','id');
-        return view('monitores.create',compact('pulgadas'));
+        return view('monitores.create');
     }
 
     /**
@@ -60,7 +58,9 @@ class MonitorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Monitor::create($request->all());        
+        Session::flash('message','Monitor registrado correctamente');
+        return Redirect::to('/monitor');
     }
 
     /**

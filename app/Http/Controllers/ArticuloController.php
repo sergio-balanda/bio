@@ -8,12 +8,18 @@ use Biosistemas\Http\Requests\UserCreateRequest;
 use Biosistemas\Http\Requests\UserUpdateRequest;
 */
 use Biosistemas\Producto;
+use Biosistemas\Marca;
+use Biosistemas\Notebook;
+use Biosistemas\Processor;
+use Biosistemas\Monitor;
 use Biosistemas\Proyector;
+use Biosistemas\Pulgadas_notebook;
+use Biosistemas\Monitor_pulgada;
 use Redirect;
 use Session;
 use DB;
 
-class ProyectorController extends Controller
+class ArticuloController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,20 +30,16 @@ class ProyectorController extends Controller
     {
         if($request!=""){
             $query=trim($request->get('searchText'));
-            $proyectors = DB::table('proyectors')
-                ->join('productos','proyectors.producto_id','productos.id')
-                ->where('productos.titulo','like','%'.$query.'%')
-                ->select('proyectors.*','productos.titulo as producto_titulo')
+            $productos = DB::table('productos')
+                ->where('titulo','like','%'.$query.'%')
                 ->paginate(6);
         }
         elseif ($request==""){
-            $proyectors = DB::table('proyectors')
-                ->join('productos','proyectors.producto_id','productos.id')
-                ->where('productos.titulo','like','%'.$query.'%')
-                ->select('proyectors.*','productos.titulo as producto_titulo')
+            $productos = DB::table('productos')
                 ->paginate(6);
         }    
-        return view('proyectores.index',["proyectors"=>$proyectors,"searchText"=>$query]);
+        //return view('usuario.index',compact('users','query'));
+        return view('articulos.index',["productos"=>$productos,"searchText"=>$query]);
     }
 
     /**
@@ -47,7 +49,8 @@ class ProyectorController extends Controller
      */
     public function create()
     {
-        return view('proyectores.create');
+        $marcas = Marca::pluck('nombre','id');
+        return view('articulos.create',compact('marcas'));
     }
 
     /**
@@ -58,9 +61,28 @@ class ProyectorController extends Controller
      */
     public function store(Request $request)
     {
-        Proyector::create($request->all());        
-        Session::flash('message','Proyector registrado correctamente');
-        return Redirect::to('/proyector');
+        $tipo = $request->get('tipo');
+        $producto = Producto::create($request->all());
+        $producto_id = $producto->id;
+        Session::flash('message','Producto registrado correctamente');
+
+        switch($tipo){
+            case ($tipo=="proyector"):
+                return view('proyectores.create',compact('producto_id'));
+                break;
+            case ($tipo=="monitor"):
+                $monitor_pulgadas = Monitor_pulgada::pluck('nombre','id');
+                return view('monitores.create',compact('producto_id','monitor_pulgadas'));
+                break;
+            case ($tipo=="notebook"):
+                $processors = Processor::pluck('nombre','id');
+                $pulgadas_notebooks = Pulgadas_notebook::pluck('nombre','id');
+                return view('notebooks.create',compact('producto_id','processors','pulgadas_notebooks'));
+                break;
+            default:
+                return Redirect::to('/home/articulo');
+                break;
+        }
     }
 
     /**
@@ -82,8 +104,7 @@ class ProyectorController extends Controller
      */
     public function edit($id)
     {
-        $proyector = Proyector::find($id);
-        return view('proyectores.edit',['proyector'=>$proyector]);
+        //
     }
 
     /**
@@ -106,6 +127,6 @@ class ProyectorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        print_r($id);
     }
 }

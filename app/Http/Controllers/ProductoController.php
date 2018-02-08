@@ -11,7 +11,10 @@ use Biosistemas\Producto;
 use Biosistemas\Marca;
 use Biosistemas\Notebook;
 use Biosistemas\Processor;
+use Biosistemas\Monitor;
+use Biosistemas\Proyector;
 use Biosistemas\Pulgadas_notebook;
+use Biosistemas\Monitor_pulgada;
 use Redirect;
 use Session;
 use DB;
@@ -59,25 +62,25 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $id=1;
         $tipo = $request->get('tipo');
+        $producto = Producto::create($request->all());
+        $producto_id = $producto->id;
+        Session::flash('message','Producto registrado correctamente');
+
         switch($tipo){
             case ($tipo=="proyector"):
-                return "proyector";    
-                //return Redirect::to('/proyector');
+                return view('proyectores.create',compact('producto_id'));
                 break;
             case ($tipo=="monitor"):
-                return "monitor";
-                //return Redirect::to('/monitor');
+                $monitor_pulgadas = Monitor_pulgada::pluck('nombre','id');
+                //Session::flash('message','Producto registrado correctamente');
+                return view('monitores.create',compact('producto_id','monitor_pulgadas'));
                 break;
             case ($tipo=="notebook"):
-                $producto = Producto::create($request->all());
-                $producto_id = $producto->id;
                 $processors = Processor::pluck('nombre','id');
                 $pulgadas_notebooks = Pulgadas_notebook::pluck('nombre','id');
-                Session::flash('message','Producto registrado correctamente');
+                //Session::flash('message','Producto registrado correctamente');
                 return view('notebooks.create',compact('producto_id','processors','pulgadas_notebooks'));
-                //return Redirect::to('/notebook');
                 break;
             default:
                 return Redirect::to('/productos');
@@ -94,7 +97,7 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        print_r($id);
     }
 
     /**
@@ -120,7 +123,7 @@ class ProductoController extends Controller
         //
     }
 
-    /**
+     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -130,4 +133,6 @@ class ProductoController extends Controller
     {
         //
     }
+    
+    
 }

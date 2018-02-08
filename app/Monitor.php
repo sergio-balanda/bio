@@ -8,6 +8,6 @@ class Monitor extends Model
 {
     protected $table = 'monitors';
     
-    protected $fillable = ['resolucion','conectividad','curvatura','apect_ratio','brightness','color','descripcion','producto_id','monitor_pulgada'];
+    protected $fillable = ['resolucion','conectividad','curvatura','aspect_ratio','brightness','color','descripcion','producto_id','monitor_pulgada'];
 
 }

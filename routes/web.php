@@ -51,3 +51,5 @@ Route::resource('notebook', 'NotebookController');
 Route::resource('monitor', 'MonitorController');
 //Proyector
 Route::resource('proyector', 'ProyectorController');
+
+Route::resource('home/articulo', 'ArticuloController');
