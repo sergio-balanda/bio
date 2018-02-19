@@ -1,6 +1,6 @@
 {!!
     Form::open(
-        array('url'=>'/usuario','method'=>'GET','autocomplete'=>'off','role'=>'search'))
+        array('url'=>'home/usuario','method'=>'GET','autocomplete'=>'off','role'=>'search'))
         
 !!}
 

@@ -41,4 +41,9 @@ class Producto extends Model
         $name=Carbon::now()->second.$imagen4->getClientOriginalName();
         \Storage::disk('local')->put($name,\File::get($imagen4));
     }
+    
+    public function setNombreAttribute($nombre){
+        $this->attributes['nombre'] = str_replace(' ','',$nombre);
+    }
+    
 }

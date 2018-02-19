@@ -3,21 +3,19 @@
 namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Biosistemas\Http\Requests\ProductoCreateRequest;
 /*
-use Biosistemas\Http\Requests\UserCreateRequest;
 use Biosistemas\Http\Requests\UserUpdateRequest;
 */
 use Biosistemas\Producto;
 use Biosistemas\Marca;
 use Biosistemas\Notebook;
-use Biosistemas\Processor;
 use Biosistemas\Monitor;
 use Biosistemas\Proyector;
-use Biosistemas\Pulgadas_notebook;
-use Biosistemas\Monitor_pulgada;
 use Redirect;
 use Session;
 use DB;
+use Storage;
 
 class ArticuloController extends Controller
 {
@@ -38,7 +36,6 @@ class ArticuloController extends Controller
             $productos = DB::table('productos')
                 ->paginate(6);
         }    
-        //return view('usuario.index',compact('users','query'));
         return view('articulos.index',["productos"=>$productos,"searchText"=>$query]);
     }
 
@@ -59,30 +56,33 @@ class ArticuloController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductoCreateRequest $request)
     {
         $tipo = $request->get('tipo');
         $producto = Producto::create($request->all());
         $producto_id = $producto->id;
         Session::flash('message','Producto registrado correctamente');
-
         switch($tipo){
             case ($tipo=="proyector"):
-                return view('proyectores.create',compact('producto_id'));
+                return redirect()->action(
+                    'ProyectorController@create', ['producto'=>$producto_id]
+                );
                 break;
             case ($tipo=="monitor"):
-                $monitor_pulgadas = Monitor_pulgada::pluck('nombre','id');
-                return view('monitores.create',compact('producto_id','monitor_pulgadas'));
+                return redirect()->action(
+                    'MonitorController@create', ['producto'=>$producto_id]
+                );
                 break;
             case ($tipo=="notebook"):
-                $processors = Processor::pluck('nombre','id');
-                $pulgadas_notebooks = Pulgadas_notebook::pluck('nombre','id');
-                return view('notebooks.create',compact('producto_id','processors','pulgadas_notebooks'));
+                return redirect()->action(
+                    'NotebookController@create', ['producto'=>$producto_id]
+                );
                 break;
             default:
                 return Redirect::to('/home/articulo');
                 break;
         }
+        
     }
 
     /**
@@ -127,6 +127,32 @@ class ArticuloController extends Controller
      */
     public function destroy($id)
     {
-        print_r($id);
+        $producto = Producto::find($id);
+        $tipo = $producto->tipo;
+        
+        if($tipo=='notebook'){
+            $notebooks = DB::table('notebooks')
+                ->where('notebooks.producto_id',$id)
+                ->delete();
+        }elseif($tipo=='monitor'){
+            $monitores = DB::table('monitors')
+                ->where('monitors.producto_id',$id)
+                ->delete();
+        }else{
+            $proyectors = DB::table('proyectors')
+                ->where('proyectors.producto_id',$id)
+                ->delete();
+        }
+
+        Storage::delete($producto->imagen);
+        Storage::delete($producto->imagen1);
+        Storage::delete($producto->imagen2);
+        Storage::delete($producto->imagen3);
+        Storage::delete($producto->imagen4);
+        Storage::delete($producto->imagen5);
+		$producto->destroy($id);
+		Session::flash('message','Producto Eliminado Correctamente');
+        return Redirect::to('/home/articulo');
     }
+
 }

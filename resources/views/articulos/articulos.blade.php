@@ -7,7 +7,7 @@
             @include('articulos.search')
         </div>
         <div class="col-md-2 col-xs-2">
-            <a href="{!!URL::to('/articulo')!!}"  title="refresh">
+            <a href="{!!URL::to('home/articulo')!!}"  title="refresh">
             <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
             </a>
         </div>  
@@ -18,6 +18,7 @@
     <table class="table table-striped table-hover">
         <thead>
             <tr>
+                <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Tipo</th>
                 <th>Operaciones</th>
@@ -26,6 +27,7 @@
         @foreach($productos as $producto)
         <tbody>
             <tr>
+                <td><img src="/imagenes_productos/{{$producto->imagen}}" alt="" width="50"></td>
                 <td>{{$producto->titulo}}</td>
                 <td>{{$producto->tipo}}</td>
                 <td>

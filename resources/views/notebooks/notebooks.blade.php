@@ -39,7 +39,7 @@
     </table>
     </div>
     @else
-        <h3>No hay Usuarios</h3>
+        <h3>No hay Notebooks</h3>
     @endif
     <div class="row text-center">
     {{ $notebooks->links() }}

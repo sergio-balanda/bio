@@ -24,6 +24,7 @@
                             {!!Form::text('nombre',null,['class'=>'form-control'])!!}
                             </div>
                         </div>
+                        <p class="text-muted col-md-12 text-center">Nombre identificatorio del producto, debe ser único para cada producto, no debe contener espacios.</p>
                         <div class="form-group">
                             {!!Form::label('Tipo de producto',null,['class'=>'col-md-4 control-label'])!!}
                             <div class="col-md-6">

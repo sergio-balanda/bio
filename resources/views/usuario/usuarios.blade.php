@@ -1,5 +1,5 @@
 <h4 class="red-text text-lighten-2">Registrar usuario 
-  <a href="{!!URL::to('/usuario/create')!!}"><button type="button" class="btn btn-primary red lighten-2">Nuevo</button></a>
+  <a href="{!!URL::to('home/usuario/create')!!}"><button type="button" class="btn btn-primary red lighten-2">Nuevo</button></a>
 </h4>
   
    <div class="row">
@@ -7,7 +7,7 @@
             @include('usuario.search')
         </div>
         <div class="col-md-2 col-xs-2">
-            <a href="{!!URL::to('/usuario')!!}"  title="refresh">
+            <a href="{!!URL::to('home/usuario')!!}"  title="refresh">
             <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
             </a>
         </div>  

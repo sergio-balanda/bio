@@ -3,10 +3,8 @@
 namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
-/*
-use Biosistemas\Http\Requests\UserCreateRequest;
-use Biosistemas\Http\Requests\UserUpdateRequest;
-*/
+use Biosistemas\Http\Requests\ProyectorCreateRequest;
+use Biosistemas\Http\Requests\ProyectorUpdateRequest;
 use Biosistemas\Producto;
 use Biosistemas\Proyector;
 use Redirect;
@@ -45,9 +43,10 @@ class ProyectorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('proyectores.create');
+        $producto_id=$request->get('producto');
+        return view('proyectores.create',compact('producto_id'));
     }
 
     /**
@@ -56,11 +55,12 @@ class ProyectorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        Proyector::create($request->all());        
+    public function store(ProyectorCreateRequest $request)
+    {   
+
+        Proyector::create($request->all());     
         Session::flash('message','Proyector registrado correctamente');
-        return Redirect::to('/proyector');
+        return Redirect::to('home/proyector');
     }
 
     /**
@@ -93,9 +93,11 @@ class ProyectorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProyectorUpdateRequest $request, $id)
     {
-        //
+        $proyector = Proyector::find($id);
+        $proyector->fill($request->all());
+        print_r($proyector);
     }
 
     /**

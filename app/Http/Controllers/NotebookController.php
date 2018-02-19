@@ -3,12 +3,14 @@
 namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Biosistemas\Http\Requests\NotebookCreateRequest;
 /*
-use Biosistemas\Http\Requests\UserCreateRequest;
 use Biosistemas\Http\Requests\UserUpdateRequest;
 */
 use Biosistemas\Producto;
 use Biosistemas\Notebook;
+use Biosistemas\Processor;
+use Biosistemas\Pulgadas_notebook;
 use Redirect;
 use Session;
 use DB;
@@ -47,7 +49,10 @@ class NotebookController extends Controller
      */
     public function create(Request $request)
     {
-        return view('notebooks.create');
+        $processors = Processor::pluck('nombre','id');
+        $pulgadas_notebooks = Pulgadas_notebook::pluck('nombre','id');
+        $producto_id=$request->get('producto');
+        return view('notebooks.create',compact('processors','pulgadas_notebooks','producto_id'));
     }
 
     /**
@@ -56,11 +61,11 @@ class NotebookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NotebookCreateRequest $request)
     {
         $notebook = Notebook::create($request->all());        
         Session::flash('message','Notebook registrada correctamente');
-        return Redirect::to('/notebook');
+        return Redirect::to('home/notebook');
     }
 
     /**

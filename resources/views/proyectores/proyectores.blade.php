@@ -39,7 +39,7 @@
     </table>
     </div>
     @else
-        <h3>No hay proyectores</h3>
+        <h3>No hay Proyectores</h3>
     @endif
     <div class="row text-center">
     {{ $proyectors->links() }}

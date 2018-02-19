@@ -67,7 +67,7 @@ class UsuarioController extends Controller
             'type'=>$request['type'],
         ]);
         Session::flash('message','Usuario registrado correctamente');
-        return Redirect::to('/usuario');
+        return Redirect::to('home/usuario');
     }
 
     /**
@@ -122,6 +122,6 @@ class UsuarioController extends Controller
         $user->active = 'false';
         $user->save();
         Session::flash('message','Usuario eliminado correctamente');
-        return Redirect::to('/usuario');
+        return Redirect::to('home/usuario');
     }
 }

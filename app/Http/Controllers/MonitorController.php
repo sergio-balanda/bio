@@ -3,12 +3,10 @@
 namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
-/*
-use Biosistemas\Http\Requests\UserCreateRequest;
-use Biosistemas\Http\Requests\UserUpdateRequest;
-*/
+use Biosistemas\Http\Requests\MonitorCreateRequest;
 use Biosistemas\Producto;
 use Biosistemas\Monitor;
+use Biosistemas\Monitor_pulgada;
 use Redirect;
 use Session;
 use DB;
@@ -45,9 +43,11 @@ class MonitorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('monitores.create');
+        $producto_id=$request->get('producto');
+        $monitor_pulgadas = Monitor_pulgada::pluck('nombre','id');
+        return view('monitores.create',compact('producto_id','monitor_pulgadas'));
     }
 
     /**
@@ -56,11 +56,11 @@ class MonitorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MonitorCreateRequest $request)
     {
         Monitor::create($request->all());        
         Session::flash('message','Monitor registrado correctamente');
-        return Redirect::to('/monitor');
+        return Redirect::to('home/monitor');
     }
 
     /**

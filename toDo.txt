@@ -1,9 +1,6 @@
 
 ## sacar demo.html de fontello
+## imagen 2 que no sea nula
+## creaate producto request all no
 
-## formumario create ventanas chicas revisar
-
-## menu con marcas pulgadas ect.
-
-## contador de productos sidebar
 

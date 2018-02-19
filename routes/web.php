@@ -42,14 +42,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //USUARIO
-Route::resource('usuario', 'UsuarioController');
+Route::resource('home/usuario', 'UsuarioController');
 //Producto
-Route::resource('productos', 'ProductoController');
-//Notebook
-Route::resource('notebook', 'NotebookController');
-//Monitor
-Route::resource('monitor', 'MonitorController');
-//Proyector
-Route::resource('proyector', 'ProyectorController');
-
 Route::resource('home/articulo', 'ArticuloController');
+//Notebook
+Route::resource('home/notebook', 'NotebookController');
+//Monitor
+Route::resource('home/monitor', 'MonitorController');
+//Proyector
+Route::resource('home/proyector', 'ProyectorController');
+

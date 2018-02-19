@@ -18,6 +18,48 @@
                             {!!Form::text('lumenes',null,['class'=>'form-control'])!!}
                             </div>
                         </div>
+                        
+                        <div class="form-group">
+                            {!!Form::label('lente',null,['class'=>'col-md-4 control-label'])!!}
+                            <div class="col-md-6">
+                            {!!Form::text('lente',null,['class'=>'form-control'])!!}
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            {!!Form::label('duracion',null,['class'=>'col-md-4 control-label'])!!}
+                            <div class="col-md-6">
+                            {!!Form::text('duracion',null,['class'=>'form-control'])!!}
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            {!!Form::label('conectividad',null,['class'=>'col-md-4 control-label'])!!}
+                            <div class="col-md-6">
+                            {!!Form::text('conectividad',null,['class'=>'form-control'])!!}
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            {!!Form::label('descripcion',null,['class'=>'col-md-4 control-label'])!!}
+                            <div class="col-md-6">
+                            {!!Form::textarea('descripcion',null,['class'=>'form-control'])!!}
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            {!!Form::label('3d',null,['class'=>'col-md-4 control-label'])!!}
+                            <div class="col-md-6">
+                            {!! Form::select('3d', [0 => 'No', 1 => 'Si'], '',['class' => 'form-control'])!!}
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            {!!Form::label('contraste',null,['class'=>'col-md-4 control-label'])!!}
+                            <div class="col-md-6">
+                            {!!Form::text('contraste',null,['class'=>'form-control'])!!}
+                            </div>
+                        </div>
                      
                         <div class="form-group">
                             <div class="form-control text-center col-md-12">
