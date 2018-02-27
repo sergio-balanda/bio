@@ -20,7 +20,7 @@
             <div class="col-lg-3 col-xs-6">
                 <a href="{{ route('producto-detalle',$producto->nombre) }}" class="thumbnail-link">
                 <div class="thumbnail">
-                  <img src="imagenes_productos/{{$producto->imagen}}" alt="img-notebooks"
+                  <img src="imagenes_productos/{{$producto->imagen}}" alt="img-producto"
                   class="img-responsive">
                   <div class="caption">
                     <h4>{{$producto->titulo}}</h4>

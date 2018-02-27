@@ -1,30 +1,31 @@
+<h4 class="red-text text-lighten-2">Proyectores</h4><hr>
   
-   <div class="row">
-        <div class="col-md-10 col-xs-10">
-            @include('proyectores.search')
-        </div>
-        <div class="col-md-2 col-xs-2">
-            <a href="{!!URL::to('/proyector')!!}"  title="refresh">
-            <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
-            </a>
-        </div>  
+<div class="row">
+    <div class="col-md-10 col-xs-10">
+        @include('proyectores.search')
     </div>
+    <div class="col-md-2 col-xs-2">
+        <a href="{!!URL::to('/proyector')!!}"  title="refresh">
+        <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
+        </a>
+    </div>  
+</div>
     
    @if(!count($proyectors)==0)  
    <div class="table-responsive">
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>id</th>
-                <th>procesador</th>
+                <th>Nombre</th>
+                <th>lumenes</th>
                 <th>Operaciones</th>
             </tr>
         </thead>
         @foreach($proyectors as $proyector)
         <tbody>
             <tr>
-                <td>{{$proyector->id}}</td>
                 <td>{{$proyector->producto_titulo}}</td>
+                <td>{{$proyector->lumenes}}</td>
                 <td>
                     <div class="btn-group" style="display: inline-flex;">
                     <a href="{{route('proyector.edit', $parameters = $proyector->id )}}" class="btn btn-primary">

@@ -1,21 +1,22 @@
-  
-   <div class="row">
-        <div class="col-md-10 col-xs-10">
-            @include('notebooks.search')
-        </div>
-        <div class="col-md-2 col-xs-2">
-            <a href="{!!URL::to('/notebook')!!}"  title="refresh">
-            <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
-            </a>
-        </div>  
+<h4 class="red-text text-lighten-2">Notebooks</h4><hr>
+
+<div class="row">
+    <div class="col-md-10 col-xs-10">
+        @include('notebooks.search')
     </div>
+    <div class="col-md-2 col-xs-2">
+        <a href="{!!URL::to('/notebook')!!}"  title="refresh">
+        <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
+        </a>
+    </div>  
+</div>
     
    @if(!count($notebooks)==0)  
    <div class="table-responsive">
     <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th>id</th>
+                <th>Titulo</th>
                 <th>procesador</th>
                 <th>Operaciones</th>
             </tr>

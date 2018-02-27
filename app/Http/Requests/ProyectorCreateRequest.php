@@ -25,12 +25,11 @@ class ProyectorCreateRequest extends FormRequest
     {
         return [
             'lumenes'=>'required|max:100',
-            'lente'=>'required|max:100',
+            'lente'=>'max:100',
             'duracion'=>'max:100',
             'conectividad'=>'max:100',
-            'descripcion'=>'required|max:255',
+            'descripcion'=>'required|max:400',
             'contraste'=>'max:100',
-
         ];
     }
 }

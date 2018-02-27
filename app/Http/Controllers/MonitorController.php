@@ -4,6 +4,7 @@ namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Biosistemas\Http\Requests\MonitorCreateRequest;
+use Biosistemas\Http\Requests\MonitorUpdateRequest;
 use Biosistemas\Producto;
 use Biosistemas\Monitor;
 use Biosistemas\Monitor_pulgada;
@@ -13,6 +14,9 @@ use DB;
 
 class MonitorController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -83,7 +87,8 @@ class MonitorController extends Controller
     public function edit($id)
     {
         $monitor = Monitor::find($id);
-        return view('monitores.edit',['monitor'=>$monitor]);
+        $monitor_pulgadas = Monitor_pulgada::pluck('nombre','id');
+        return view('monitores.edit',['monitor'=>$monitor,'monitor_pulgadas'=>$monitor_pulgadas]);
     }
 
     /**
@@ -93,9 +98,13 @@ class MonitorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MonitorUpdateRequest $request, $id)
     {
-        //
+        $monitor = Monitor::find($id);
+        $monitor->fill($request->all());
+        $monitor->save();
+        Session::flash('message','Monitor editado correctamente');
+        return Redirect::to('/home/monitor');        
     }
 
     /**

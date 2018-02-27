@@ -4,7 +4,7 @@ namespace Biosistemas\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProyectorUpdateRequest extends FormRequest
+class ProductoUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class ProyectorUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'lumenes'=>'required|max:100',
-            'lente'=>'max:100',
-            'duracion'=>'max:100',
-            'conectividad'=>'max:100',
-            'descripcion'=>'required|max:400',
-            'contraste'=>'max:100',
+            'titulo'=>'required|max:120',
+            'nombre'=>'required|unique:productos|max:255',
+            'precio'=>'required|numeric',
         ];
     }
 }

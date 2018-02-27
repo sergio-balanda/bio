@@ -13,6 +13,9 @@ use DB;
 
 class ProyectorController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -97,7 +100,9 @@ class ProyectorController extends Controller
     {
         $proyector = Proyector::find($id);
         $proyector->fill($request->all());
-        print_r($proyector);
+        $proyector->save();
+        Session::flash('message','Proyector editado correctamente');
+        return Redirect::to('/home/proyector');    
     }
 
     /**

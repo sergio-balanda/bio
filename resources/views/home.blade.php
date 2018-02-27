@@ -7,7 +7,7 @@
        <!--/side-->
         
         <div class="col-sm-9 col-md-10 main">
-           
+           @include('alerts.errors')
             <!--toggle sidebar button-->
             <p class="visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="icon-th-list"></i></button>
@@ -26,7 +26,7 @@
                                     </div>
                                 @endif
 
-                                You are logged in!
+                                Has iniciado sesión!
                             </div>
                         </div>
                     </div>

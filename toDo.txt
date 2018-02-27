@@ -1,6 +1,6 @@
 
 ## sacar demo.html de fontello
 ## imagen 2 que no sea nula
-## creaate producto request all no
-
-
+## ver de eliminar usuario que no se pueda eliminar usuario 1 en el metodo
+## ver el nombre de la url en create
+## probar imagen con tamaños distintos

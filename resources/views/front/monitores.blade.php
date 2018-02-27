@@ -54,7 +54,7 @@
               <div class="col-xs-6 col-lg-4">
                 <a href="{{ route('producto-detalle',$monitor->monitor_nombre) }}" class="thumbnail-link">
                 <div class="thumbnail">
-                  <img src="{{$monitor->imagen}}" alt="img-notebooks"
+                  <img src="imagenes_productos/{{$monitor->imagen}}" alt="img-notebooks"
                   class="img-responsive">
                   <div class="caption">
                     <h4>{{$monitor->titulo}}</h4>

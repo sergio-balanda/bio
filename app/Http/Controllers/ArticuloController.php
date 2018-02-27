@@ -4,9 +4,7 @@ namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Biosistemas\Http\Requests\ProductoCreateRequest;
-/*
-use Biosistemas\Http\Requests\UserUpdateRequest;
-*/
+use Biosistemas\Http\Requests\ProductoUpdateRequest;
 use Biosistemas\Producto;
 use Biosistemas\Marca;
 use Biosistemas\Notebook;
@@ -19,6 +17,9 @@ use Storage;
 
 class ArticuloController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -30,10 +31,12 @@ class ArticuloController extends Controller
             $query=trim($request->get('searchText'));
             $productos = DB::table('productos')
                 ->where('titulo','like','%'.$query.'%')
+                ->orderBy('id','desc')
                 ->paginate(6);
         }
         elseif ($request==""){
             $productos = DB::table('productos')
+                ->orderBy('id','desc')
                 ->paginate(6);
         }    
         return view('articulos.index',["productos"=>$productos,"searchText"=>$query]);
@@ -46,7 +49,7 @@ class ArticuloController extends Controller
      */
     public function create()
     {
-        $marcas = Marca::pluck('nombre','id');
+        $marcas = Marca::orderBy('id')->pluck('nombre','id');
         return view('articulos.create',compact('marcas'));
     }
 
@@ -104,7 +107,9 @@ class ArticuloController extends Controller
      */
     public function edit($id)
     {
-        //
+        $marcas = Marca::orderBy('id')->pluck('nombre','id');
+        $producto = Producto::find($id);
+        return view('articulos.edit',['producto'=>$producto,'marcas'=>$marcas]);
     }
 
     /**
@@ -114,9 +119,13 @@ class ArticuloController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductoUpdateRequest $request, $id)
     {
-        //
+        $producto = Producto::find($id);
+        $producto->fill($request->all());
+        $producto->save();
+        Session::flash('message','Producto editado correctamente');
+        return Redirect::to('/home/articulo');
     }
 
     /**

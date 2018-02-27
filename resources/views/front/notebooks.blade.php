@@ -61,7 +61,7 @@
               <div class="col-xs-6 col-lg-4">
                 <a href="{{ route('producto-detalle',$notebook->notebook_nombre) }}" class="thumbnail-link">
                 <div class="thumbnail">
-                  <img src="{{$notebook->imagen}}" alt="img-notebooks"
+                  <img src="imagenes_productos/{{$notebook->imagen}}" alt="img-notebooks"
                   class="img-responsive">
                   <div class="caption">
                     <h4>{{$notebook->titulo}}</h4>

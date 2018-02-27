@@ -84,6 +84,7 @@
                         </div>
                         <div class="form-group">
                             <div class="form-control text-center col-md-12">
+                                <a href="{{ route('articulo.index') }}" class="btn btn-danger">Cancelar</a>                           
                                 {!! Form::submit('Guardar', ['class'=>'btn btn-primary']) !!}
                            </div>
                         </div>

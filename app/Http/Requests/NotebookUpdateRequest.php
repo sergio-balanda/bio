@@ -4,7 +4,7 @@ namespace Biosistemas\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NotebookCreateRequest extends FormRequest
+class NotebookUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -38,7 +38,6 @@ class NotebookCreateRequest extends FormRequest
             'peso'=>'numeric',
         ];
     }
-            
     public function attributes()
     {
         return [

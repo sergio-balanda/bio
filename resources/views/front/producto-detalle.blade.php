@@ -13,9 +13,9 @@
            
             <div class="col-lg-1 col-md-1">
                 <ol class="carousel-indicators hidde">
-                <li data-target="#carousel-1" data-slide-to="0" class="active"><img src="/imagenes_productos/{{$productos->imagen}}" height="40px" alt=""></li>
+                <li data-target="#carousel-1" data-slide-to="0" class="active"><img src="/imagenes_productos/{{$productos->imagen}}" height="40px" alt="imagen-detalle"></li>
                 <li data-target="#carousel-1" data-slide-to="1">
-                    <img src="/imagenes_productos/{{$productos->imagen1}}" height="40px" alt="">
+                    <img src="/imagenes_productos/{{$productos->imagen1}}" height="40px" alt="imagen-detalle-2">
                 </li>
                 </ol>
             </div>
@@ -23,12 +23,12 @@
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <a href="#" class="thumbnail">
-                        <img src="/imagenes_productos/{{$productos->imagen}}">
+                        <img src="/imagenes_productos/{{$productos->imagen}}" alt="imagen-detalle">
                     </a>
                 </div>
                 <div class="item">
                     <a href="#" class="thumbnail">
-                        <img src="/imagenes_productos/{{$productos->imagen1}}">
+                        <img src="/imagenes_productos/{{$productos->imagen1}}" alt="imagen-detalle-2">
                     </a>
                 </div>
             </div>

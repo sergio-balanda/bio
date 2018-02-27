@@ -4,9 +4,7 @@ namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Biosistemas\Http\Requests\NotebookCreateRequest;
-/*
-use Biosistemas\Http\Requests\UserUpdateRequest;
-*/
+use Biosistemas\Http\Requests\NotebookUpdateRequest;
 use Biosistemas\Producto;
 use Biosistemas\Notebook;
 use Biosistemas\Processor;
@@ -17,6 +15,9 @@ use DB;
 
 class NotebookController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -88,7 +89,9 @@ class NotebookController extends Controller
     public function edit($id)
     {
         $notebook = Notebook::find($id);
-        return view('notebooks.edit',['notebook'=>$notebook]);
+        $processors = Processor::pluck('nombre','id');
+        $pulgadas_notebooks = Pulgadas_notebook::pluck('nombre','id');
+        return view('notebooks.edit',['notebook'=>$notebook,'processors'=>$processors,'pulgadas_notebooks'=>$pulgadas_notebooks]);
     }
 
     /**
@@ -98,9 +101,13 @@ class NotebookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NotebookUpdateRequest $request, $id)
     {
-        //
+        $notebook = Notebook::find($id);
+        $notebook->fill($request->all());
+        $notebook->save();
+        Session::flash('message','Notebook editado correctamente');
+        return Redirect::to('/home/notebook');    
     }
 
     /**
