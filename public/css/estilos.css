@@ -24,7 +24,7 @@
 }
 
 .banner{
-    width: 100%;
+    width: 100;    
 }
 
 .fondoVerde{
@@ -77,10 +77,14 @@
     transform: scale(1.1);
 }
 
+.info-contacto h5{
+    color: black;
+}
+
 @media screen and (min-width: 1024px) {
     .hidde {
         display: block;
-    }
+    }  
 }
 
 @media screen and (min-width: 1200px) {

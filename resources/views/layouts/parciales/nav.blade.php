@@ -18,8 +18,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="{!!URL::to('/notebooks')!!}">Notebooks</a></li>
             <li><a href="{!!URL::to('/monitores')!!}">Monitores</a></li>
-            <li><a href="#">Proyectores</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="{!!URL::to('/proyectores')!!}">Proyectores</a></li>
+            <li><a href="{!!URL::to('/contacto')!!}">Contacto</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

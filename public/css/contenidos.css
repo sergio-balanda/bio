@@ -54,10 +54,10 @@
 @media (min-width: 768px) {
     .main {
     padding: 65px 40px 0 40px;   
-  }   
-        .main .display-flex img{
-        min-height: 300px;
-}
+    }   
+    .main .display-flex img{
+        min-height: 280px;
+    }
 }
 
 

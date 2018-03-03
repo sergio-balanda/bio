@@ -10,6 +10,8 @@ Route::get('/notebooks','FrontController@notebooks');
 Route::get('/monitores','FrontController@monitores');
 Route::get('/proyectores','FrontController@proyectores');
 Route::get('/contacto','FrontController@contacto');
+//Mail
+Route::resource('mail', 'MailController');
 
 Route::get('producto/{nombre}',[
    'as'=>'producto-detalle',

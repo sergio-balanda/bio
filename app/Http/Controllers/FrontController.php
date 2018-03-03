@@ -297,12 +297,12 @@ class FrontController extends Controller
     
     public function proyectores()
     {
-        return view('proyectores');    
+        return view('front.proyectores');    
     }
     
      public function contacto()
     {
-        return view('contacto');    
+        return view('front.contacto');    
     }
     
     public function show($nombre)
