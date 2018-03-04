@@ -30,7 +30,7 @@
                                 @endif
                         </div>
                         <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                           {!!Form::email('email',null,['placeholder'=>'Email...','class'=>'form-control'])!!}
+                           {!!Form::email('email',null,['placeholder'=>'E-mail...','class'=>'form-control'])!!}
                            @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>

@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="clear"></div>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2 main">
             <div class="panel panel-default">
                 <div class="panel-heading">Reset Password</div>
 
