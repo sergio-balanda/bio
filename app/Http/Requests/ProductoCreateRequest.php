@@ -25,6 +25,22 @@ class ProductoCreateRequest extends FormRequest
     {
         return [
             'titulo'=>'required|max:120',
+            'nombre'=>'required|unique:productos|max:255',
+            'precio'=>'required|numeric',
+            'imagen'=>'required|image',
+            'imagen1'=>'required|image',
+            'imagen2'=>'image',
+            'imagen3'=>'image',
+            'imagen4'=>'image',
+        ];
+    }
+    public function attributes()
+    {
+        return [
+            'imagen1' => 'imagen 2',
+            'imagen2' => 'imagen 3',
+            'imagen3' => 'imagen 4',
+            'imagen4' => 'imagen 5',
         ];
     }
 }

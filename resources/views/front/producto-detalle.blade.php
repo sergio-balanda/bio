@@ -23,7 +23,7 @@
                 </li>
                 @endif
                 @if($productos->imagen3)
-                <li data-target="#carousel-1" data-slide-to="2">
+                <li data-target="#carousel-1" data-slide-to="3">
                     <img src="/imagenes_productos/{{$productos->imagen3}}" height="40px" alt="imagen-detalle-4">
                 </li>
                 @endif

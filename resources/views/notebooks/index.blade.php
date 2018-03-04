@@ -14,12 +14,7 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="icon-th-list"></i></button>
             </p>
             
-            @if(Session::has('message'))
-            <div class="alert alert-success alert-dismissible" role="alert" style="list-style:none">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  {{Session::get('message')}}
-            </div>
-            @endif
+            @include('alerts.success')
             
             <!--contenido-->
             <div class="row">

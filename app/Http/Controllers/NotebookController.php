@@ -106,7 +106,7 @@ class NotebookController extends Controller
         $notebook = Notebook::find($id);
         $notebook->fill($request->all());
         $notebook->save();
-        Session::flash('message','Notebook editado correctamente');
+        Session::flash('message','Notebook editada correctamente');
         return Redirect::to('/home/notebook');    
     }
 

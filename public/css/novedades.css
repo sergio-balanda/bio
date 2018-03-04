@@ -1,0 +1,57 @@
+.thumbnail:hover{
+    border: solid 1px #0085c3;
+}
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  height: 100%;
+}
+
+.thumbnail-link:hover{
+    text-decoration: none;
+}
+
+.novedades .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+    min-height: 91.88px;
+}
+
+
+@media screen and (min-width: 480px) {
+    .novedades .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+        min-height: 150px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .novedades .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+        min-height: 195px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .novedades .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+        min-height: 250px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .novedades .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+        min-height: 333px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .novedades .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+        min-height: 333px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .novedades .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+        min-height: 190px;
+    }
+}

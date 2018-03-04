@@ -36,7 +36,6 @@
                                 <hr>
                             </div>    
                         </div>
-                        <hr>
                         <div class="form-group">
                             {!!Form::label('Tipo de producto',null,['class'=>'col-md-4 control-label'])!!}
                             <div class="col-md-6">
@@ -99,12 +98,12 @@
                         </div>
                         <p class="text-muted text-center text-danger">{{ URL::to('imagenes_productos/' . $producto->imagen4)  }}</p>
                         <div class="form-group">
-                            <div class="form-control text-center col-md-10 col-md-offset-1">
+                            <div class="form-control text-center col-md-12">
                                <a href="{{ route('articulo.index') }}" class="btn btn-danger">Cancelar</a> 
                                {!! Form::submit('Guardar', ['class'=>'btn btn-primary']) !!}                          
                            </div>
                         </div>
                     {!!Form::close()!!}
         </div>
-
+            </div></div>
 @endsection

@@ -37,3 +37,13 @@
 .tabla-detalle h5{
     color: black;
 }
+
+.carousel-indicators img{
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+    .slide .carousel-inner>.item>img, .carousel-inner>.item>a>img{
+        min-height: 350px;
+    }
+}

@@ -7,7 +7,7 @@
     </div>
     </div>
    
-    <div class="container container-fluid">
+    <div class="container container-fluid novedades">
         <div class="row">
             <div class="col">
                 <div class="page-header">

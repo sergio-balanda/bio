@@ -4,12 +4,7 @@
         <div class="col-md-8 col-md-offset-2 main">
             
             @include('alerts.request')     
-            @if(Session::has('message'))
-            <div class="alert alert-success alert-dismissible" role="alert" style="list-style:none">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  {{Session::get('message')}}
-            </div>
-            @endif
+            @include('alerts.success')
             <div class="panel panel-success">
                 <div class="panel-heading">Nueva notebook</div>
                 <div class="panel-body">
