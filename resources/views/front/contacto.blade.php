@@ -21,16 +21,31 @@
             <div class="contact-form">
                      {!!Form::open(['route'=>'mail.store','method'=>'POST'])!!}
                      <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                            {!!Form::text('name',null,['placeholder'=>'Nombre...','class'=>'form-control'])!!}
+                          @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
                         </div>
-                        <div class="form-group">
-                           {!!Form::text('email',null,['placeholder'=>'Email...','class'=>'form-control'])!!}
+                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+                           {!!Form::email('email',null,['placeholder'=>'Email...','class'=>'form-control'])!!}
+                           @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                      </div>
                      <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group {{ $errors->has('mensaje') ? ' has-error' : '' }}">
                            {!!Form::textarea('mensaje',null,['placeholder'=>'Mensaje...','class'=>'form-control'])!!}
+                           @if ($errors->has('mensaje'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('mensaje') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                      </div>
                      {!!Form::submit('Enviar',['class'=>'btn btn-primary btn-lg'])!!}

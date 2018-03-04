@@ -3,6 +3,7 @@
 namespace Biosistemas\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Biosistemas\Http\Requests\MailCreateRequest;
 use Mail;
 use Session;
 use Redirect;
@@ -35,7 +36,7 @@ class MailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MailCreateRequest $request)
     {
         Mail::send('emails.contact',$request->all(),function($msj){
             $msj->subject('Correo de biosistemas');
