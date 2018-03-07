@@ -81,6 +81,10 @@
     color: black;
 }
 
+.quienes-somos{
+    font-size: 1.2em;
+}
+
 @media screen and (min-width: 1024px) {
     .hidde {
         display: block;

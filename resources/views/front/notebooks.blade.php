@@ -68,9 +68,9 @@
                     <p>{{$notebook->procesador}}</p>
                     <p>{{$notebook->disco_rigido}}</p>
                     <p>{{$notebook->ram}}</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Comprar</a> 
+                    <p class="text-center"><a href="#" class="btn btn-primary hidden" role="button">Comprar</a> 
                     <a href="#" class="btn btn-success">
-                        $ {{number_format($notebook->precio,2)}}
+                        $ {{number_format($notebook->precio,2,',','.')}}
                     </a>
                   </div>
                 </div> 

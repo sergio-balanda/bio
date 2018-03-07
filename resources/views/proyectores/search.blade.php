@@ -1,6 +1,6 @@
 {!!
     Form::open(
-        array('url'=>'/proyector','method'=>'GET','autocomplete'=>'off','role'=>'search'))
+        array('url'=>'home/proyector','method'=>'GET','autocomplete'=>'off','role'=>'search'))
         
 !!}
 

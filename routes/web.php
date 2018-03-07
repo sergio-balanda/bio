@@ -10,6 +10,9 @@ Route::get('/notebooks','FrontController@notebooks');
 Route::get('/monitores','FrontController@monitores');
 Route::get('/proyectores','FrontController@proyectores');
 Route::get('/contacto','FrontController@contacto');
+Route::get('/quienes-somos','FrontController@quienesSomos');
+Route::get('/clientes','FrontController@clientes');
+
 //Mail
 Route::resource('mail', 'MailController');
 
@@ -53,4 +56,9 @@ Route::resource('home/notebook', 'NotebookController');
 Route::resource('home/monitor', 'MonitorController');
 //Proyector
 Route::resource('home/proyector', 'ProyectorController');
-
+//Procesadores
+Route::resource('home/procesador', 'ProcesadorController');
+//Marcas
+Route::resource('home/marca', 'MarcaController');
+//Pulgadas
+Route::resource('home/pulgada', 'PulgadaController');

@@ -3,8 +3,8 @@
         <div class="row">
            <br>
             <div class="col-md-4">
-                <h4><a href="#">Quiénes somos</a></h4>
-                <h4><a href="#">Clientes</a></h4>
+                <h4><a href="{!!URL::to('/quienes-somos')!!}">Quiénes somos</a></h4>
+                <h4><a href="{!!URL::to('/clientes')!!}">Clientes</a></h4>
                 <hr>
             </div>
             <div class="col-md-4">

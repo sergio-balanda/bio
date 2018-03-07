@@ -332,4 +332,12 @@ class FrontController extends Controller
         
         return view('front.producto-detalle',compact('productos','notebooks','monitors','proyectors'));  
     }
+    
+    public function quienesSomos(){
+        return view('front.quienes-somos');
+    }
+    
+    public function clientes(){
+        return view('front.clientes');
+    }
 }//fin

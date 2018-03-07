@@ -25,7 +25,7 @@
                             </div>
                         @endif
 
-                        @include('usuario.usuarios') 
+                        @include('procesadores.procesadores') 
                     </div>
             </div>
             <!--contenido-->

@@ -51,6 +51,7 @@
                             {!!Form::text('link',null,['class'=>'form-control'])!!}
                             </div>
                         </div>
+                        <p class="text-muted col-md-12 text-center">Tamaño recomendado de la imagenes (640 x 480).</p>
                         <div class="form-group">
                             {!!Form::label('Imagen',null,['class'=>'col-md-4 control-label'])!!}
                            <div class="col-md-6">
@@ -89,6 +90,7 @@
                            </div>
                         </div>
                     {!!Form::close()!!}
-        </div>
-
+                </div>
+            </div>
+        </div>    
 @endsection

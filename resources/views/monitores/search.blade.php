@@ -1,6 +1,6 @@
 {!!
     Form::open(
-        array('url'=>'/monitor','method'=>'GET','autocomplete'=>'off','role'=>'search'))
+        array('url'=>'home/monitor','method'=>'GET','autocomplete'=>'off','role'=>'search'))
         
 !!}
 

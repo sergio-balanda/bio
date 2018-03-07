@@ -25,7 +25,7 @@
                             </div>
                         @endif
 
-                        @include('usuario.usuarios') 
+                        @include('pulgadas.pulgadas') 
                     </div>
             </div>
             <!--contenido-->

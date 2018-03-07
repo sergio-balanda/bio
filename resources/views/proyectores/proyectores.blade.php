@@ -5,7 +5,7 @@
         @include('proyectores.search')
     </div>
     <div class="col-md-2 col-xs-2">
-        <a href="{!!URL::to('/proyector')!!}"  title="refresh">
+        <a href="{!!URL::to('home/proyector')!!}"  title="refresh">
         <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
         </a>
     </div>  

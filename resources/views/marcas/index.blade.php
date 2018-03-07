@@ -25,7 +25,7 @@
                             </div>
                         @endif
 
-                        @include('usuario.usuarios') 
+                        @include('marcas.marcas') 
                     </div>
             </div>
             <!--contenido-->

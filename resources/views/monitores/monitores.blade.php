@@ -5,7 +5,7 @@
         @include('monitores.search')
     </div>
     <div class="col-md-2 col-xs-2">
-        <a href="{!!URL::to('/monitor')!!}"  title="refresh">
+        <a href="{!!URL::to('home/monitor')!!}"  title="refresh">
         <button class="btn btn-success"><span class="icon-arrows-ccw"></span></button>
         </a>
     </div>  

@@ -59,9 +59,9 @@
                   <div class="caption">
                     <h4>{{$monitor->titulo}}</h4>
                     <p>Tamaño: "{{$monitor->tamaño}}"</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Comprar</a> 
+                    <p class="text-center"><a href="#" class="btn btn-primary hidden" role="button">Comprar</a> 
                     <a href="#" class="btn btn-success">
-                        $ {{number_format($monitor->precio,2)}} 
+                        $ {{number_format($monitor->precio,2,',','.')}} 
                     </a>
                   </div>
                 </div> 

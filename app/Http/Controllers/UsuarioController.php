@@ -110,7 +110,7 @@ class UsuarioController extends Controller
         $user->fill($request->all());
         $user->save();
         Session::flash('message','Usuario editado correctamente');
-        return Redirect::to('/usuario');
+        return Redirect::to('home/usuario');
         
     }
 

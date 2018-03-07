@@ -8,9 +8,9 @@
             <li><a href="{!!URL::to('/home/monitor')!!}">Monitores</a></li>
             <li><a href="{!!URL::to('/home/proyector')!!}">Proyectores</a></li>
             <li><a href="{!!URL::to('/home/notebook')!!}">Notebooks</a></li>
-            <li><a href="">Procesadores</a></li>
-            <li><a href="">Marcas</a></li>
-            <li><a href="">Pulgadas</a></li>   
+            <li><a href="{!!URL::to('/home/procesador')!!}">Procesadores</a></li>
+            <li><a href="{!!URL::to('/home/marca')!!}">Marcas</a></li>
+            <li><a href="{!!URL::to('/home/pulgada')!!}">Pulgadas</a></li>   
         </ul>
     </div>          
 </div><!--/side-->
